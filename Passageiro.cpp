@@ -1,22 +1,26 @@
 //
 // Created by PC on 28/11/2021.
 //
-
 #include "Passageiro.h"
 
-Passageiro::Passageiro(string nome, int bilhete) {
+Passageiro::Passageiro(string nome, int id, vector<Bilhete> bilhetes, vector<Bagagem> bagagens) {
     this->nome = nome;
-    this->bilhete = bilhete;
+    this->id = id;
+    this->bilhetes = bilhetes;
+    this->bagagens = bagagens;
 }
 string Passageiro::getNome () const {
     return nome;
 }
-int Passageiro::getBilhete() const {
-    return bilhete;
+
+int Passageiro::getId () const {
+    return id;
 }
-void Passageiro::setNome(string nome) {
-    this->nome = nome;
+
+vector<Bilhete> Passageiro::getBilhetes() const {
+    return bilhetes;
 }
-void Passageiro::setBilhete(int num) {
-    bilhete = num;
+
+vector<Bagagem> Passageiro::getBagagens() const {
+    return bagagens;
 }

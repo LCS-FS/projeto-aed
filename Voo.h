@@ -8,12 +8,13 @@
 #include <string>
 #include <list>
 #include "Passageiro.h"
+#include "TransporteBagagem.h"
 
 using namespace std;
 
 class Voo {
 public:
-    Voo(int numVoo, string dataPartida, int duracaoVoo, list<Passageiro> passageiros);
+    Voo(int numVoo, string dataPartida, int duracaoVoo, list<Passageiro> passageiros, TransporteBagagem transporteBagagem);
     int getNum() const;
     string getData() const ;
     int getDuracao() const;
@@ -21,14 +22,16 @@ public:
     void setNum(int num);
     void setDuracao(int dur);
     void setData(string data);
-    void addPassageiro(Passageiro passageiro); //???
-    void removePassageiro(); //???
+    bool addPassageiro(Passageiro& passageiro); //adiciona passageiro ao voo, retorna true se possivel e false se voo já estiver cheio
+    bool removePassageiro(Passageiro& passageiro); //remove passageiro do voo, retorna true se encontrou o passageiro senao false
 
 private:
     int numVoo;
     string dataPartida; //se houver classe data futuramente alterar
     int duracaoVoo;
     list<Passageiro> passageiros;
+    TransporteBagagem transporteBagagem;
+    //Aviao aviao; preciso do tamanho para verficar se dá para adicionar passageiro
 
 
 };

@@ -6,19 +6,25 @@
 #define PROJETO_AED_PASSAGEIRO_H
 
 #include <string>
+#include <vector>
+#include <list>
+#include "Bilhete.h"
+#include "Bagagem.h"
 
 using namespace std;
 
 class Passageiro {
 public:
-    Passageiro(string nome, int bilhete);
+    Passageiro(string nome, int id, vector<Bilhete> bilhetes, vector<Bagagem> bagagens);
     string getNome () const;
-    int getBilhete() const;
-    void setNome(string nome);
-    void setBilhete(int num);
+    int getId () const;
+    vector<Bilhete> getBilhetes() const;
+    vector<Bagagem> getBagagens() const;
 private:
     string nome;
-    int bilhete; //pode vir a ser string se houver necessidade de mudar o formato do numero do bilhete
+    int id;
+    vector<Bilhete> bilhetes;
+    vector<Bagagem> bagagens;
 };
 
 

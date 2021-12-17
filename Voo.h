@@ -9,25 +9,26 @@
 #include <list>
 #include "Passageiro.h"
 #include "TransporteBagagem.h"
+#include "Date.h"
 
 using namespace std;
 
 class Voo {
 public:
-    Voo(int numVoo, string dataPartida, int duracaoVoo, list<Passageiro> passageiros, TransporteBagagem transporteBagagem);
+    Voo(int numVoo, Date dataPartida, int duracaoVoo, list<Passageiro> passageiros, TransporteBagagem transporteBagagem);
     int getNum() const;
-    string getData() const ;
+    Date getData() const ;
     int getDuracao() const;
     list<Passageiro> getPassageiros() const;
     void setNum(int num);
     void setDuracao(int dur);
-    void setData(string data);
+    void setData(Date data);
     bool addPassageiro(Passageiro& passageiro); //adiciona passageiro ao voo, retorna true se possivel e false se voo já estiver cheio
     bool removePassageiro(Passageiro& passageiro); //remove passageiro do voo, retorna true se encontrou o passageiro senao false
 
 private:
     int numVoo;
-    string dataPartida; //se houver classe data futuramente alterar
+    Date dataPartida; //se houver classe data futuramente alterar
     int duracaoVoo;
     list<Passageiro> passageiros;
     TransporteBagagem transporteBagagem;

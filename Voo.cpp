@@ -5,7 +5,7 @@
 #include <string>
 #include "Voo.h"
 
-Voo::Voo(int numVoo, string dataPartida, int duracaoVoo, list<Passageiro> passageiros, TransporteBagagem transporteBagagem){
+Voo::Voo(int numVoo, Date dataPartida, int duracaoVoo, list<Passageiro> passageiros, TransporteBagagem transporteBagagem){
     this->numVoo = numVoo;
     this->dataPartida = dataPartida;
     this->duracaoVoo = duracaoVoo;
@@ -15,7 +15,7 @@ Voo::Voo(int numVoo, string dataPartida, int duracaoVoo, list<Passageiro> passag
 int Voo::getNum() const{
     return numVoo;
 }
-string Voo::getData() const {
+Date Voo::getData() const {
     return dataPartida;
 }
 int Voo::getDuracao() const {
@@ -27,7 +27,7 @@ list<Passageiro> Voo::getPassageiros() const {
 void Voo::setNum(int num) {
     numVoo = num;
 }
-void Voo::setData(string data) {
+void Voo::setData(Date data) {
     dataPartida = data;
 }
 void Voo::setDuracao(int dur){
